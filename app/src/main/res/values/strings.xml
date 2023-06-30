@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ImbdApp</string>
+    <string name="accessibility_logo">Logo de la aplicación</string>
+</resources>

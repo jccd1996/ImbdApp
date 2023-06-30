@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ImbdSplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">
+            @color/imbd_yellow
+        </item>
+        <item name="postSplashScreenTheme">@style/Theme.ImbdApp</item>
+    </style>
+</resources>
