@@ -11,6 +11,7 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,9 +36,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = ImbdBackgroundYellow
                 ) {
-                    Column( modifier = Modifier.fillMaxSize(),
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally) {
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
                         LoginCard()
                         Spacer(modifier = Modifier.padding(vertical = 32.dp))
                         RegisterInfo()
@@ -60,19 +63,15 @@ fun LoginCard() {
         contentDescription = stringResource(id = R.string.accessibility_logo),
         modifier = imageModifier,
     )
-    BasicTextField(
-        modifier= Modifier.background(Color.White),
+    TextField(
         value = user,
         onValueChange = { user = it },
     )
     Spacer(modifier = Modifier.padding(vertical = 8.dp))
-    BasicTextField(
+    TextField(
         value = password,
-        modifier= Modifier.background(Color.White),
-
         onValueChange = { password = it },
-
-        )
+    )
     Spacer(modifier = Modifier.padding(vertical = 8.dp))
     Button(onClick = { /*TODO*/ }) {
         Text("Login")
