@@ -1,5 +1,6 @@
 package com.jccd.imbd
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,7 +8,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -16,6 +16,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -23,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.jccd.imbdapp.R
+import com.jccd.imbdapp.ui.register.RegisterActivity
 import com.jccd.imbdapp.ui.theme.ImbdAppTheme
 import com.jccd.imbdapp.ui.theme.ImbdBackgroundYellow
 
@@ -53,6 +55,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun LoginCard() {
+    val context = LocalContext.current
     val imageModifier = Modifier
         .size(150.dp)
 
@@ -65,15 +68,24 @@ fun LoginCard() {
     )
     TextField(
         value = user,
+        singleLine = true,
+        label = { Text("Usuario") },
         onValueChange = { user = it },
     )
     Spacer(modifier = Modifier.padding(vertical = 8.dp))
     TextField(
         value = password,
+        singleLine = true,
+        label = { Text("Contraseña") },
         onValueChange = { password = it },
     )
-    Spacer(modifier = Modifier.padding(vertical = 8.dp))
-    Button(onClick = { /*TODO*/ }) {
+    Spacer(modifier = Modifier.padding(vertical = 4.dp))
+    Text("¿Olvidaste tu contraseña?")
+    Spacer(modifier = Modifier.padding(vertical = 20.dp))
+    Button(
+        onClick = {
+        context.startActivity(Intent(context, RegisterActivity::class.java))
+    }) {
         Text("Login")
     }
 }
