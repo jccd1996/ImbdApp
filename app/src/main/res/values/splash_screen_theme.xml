@@ -7,4 +7,9 @@
         </item>
         <item name="postSplashScreenTheme">@style/Theme.ImbdApp</item>
     </style>
+
+    <style name="Theme.ImbdMoveListTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/imbd_yellow</item>
+    </style>
+
 </resources>

@@ -2,4 +2,5 @@
     <string name="app_name">ImbdApp</string>
     <string name="accessibility_logo">Logo de la aplicación</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_movie_list">MovieListActivity</string>
 </resources>

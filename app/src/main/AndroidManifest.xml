@@ -13,12 +13,17 @@
         android:theme="@style/Theme.ImbdSplashScreenTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ui.movie_list.MovieListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_movie_list"
+            android:theme="@style/Theme.ImbdMoveListTheme" />
+        <activity
             android:name=".ui.register.RegisterActivity"
             android:exported="false"
             android:label="@string/title_activity_register"
             android:theme="@style/Theme.ImbdApp" />
         <activity
-            android:name="com.jccd.imbd.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.jccd.imbd
+package com.jccd.imbdapp
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
@@ -23,7 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.jccd.imbdapp.R
+import com.jccd.imbdapp.ui.movie_list.MovieListActivity
 import com.jccd.imbdapp.ui.register.RegisterActivity
 import com.jccd.imbdapp.ui.theme.ImbdAppTheme
 import com.jccd.imbdapp.ui.theme.ImbdBackgroundYellow
@@ -84,7 +85,7 @@ fun LoginCard() {
     Spacer(modifier = Modifier.padding(vertical = 20.dp))
     Button(
         onClick = {
-        context.startActivity(Intent(context, RegisterActivity::class.java))
+        context.startActivity(Intent(context, MovieListActivity::class.java))
     }) {
         Text("Login")
     }
@@ -92,13 +93,17 @@ fun LoginCard() {
 
 @Composable
 private fun RegisterInfo() {
+    val context = LocalContext.current
     Text("O podes ingresar con")
     Spacer(modifier = Modifier.padding(vertical = 8.dp))
     SocialNetworks()
     Spacer(modifier = Modifier.padding(vertical = 8.dp))
     Row() {
-        Text("¿No tienes cuenta?")
-        Text(fontWeight = FontWeight.Bold, text = " Registrate")
+        Text("¿No tienes cuenta? ")
+        Text(fontWeight = FontWeight.Bold, modifier = Modifier.clickable {
+            context.startActivity(Intent(context, RegisterActivity::class.java))
+
+        },text = " Registrate")
     }
     Spacer(modifier = Modifier.padding(vertical = 8.dp))
     Text(fontWeight = FontWeight.Bold, text = "Continuar como invitado")

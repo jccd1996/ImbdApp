@@ -1,4 +1,4 @@
-package com.jccd.imbdapp.ui.theme.components
+package com.jccd.imbdapp.ui.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
